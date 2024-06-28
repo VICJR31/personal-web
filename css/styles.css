@@ -1,0 +1,378 @@
+/* styles.css */
+/* Base styles for all devices */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Check 6/13/24's note on doc for info on what each elem does */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* For the toggle button*/
+  z-index: 1000;
+  /*UI for mobile devices?*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  box-sizing: border-box;
+}
+
+/* Toggle button */
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  /* Toggle button */
+  padding: 14px 20px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+
+/* 6/13/24's note */
+.navbar a {
+  /* float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none; */
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 35px;
+  /* flex: 1; Allow flex items to shrink and grow */
+  min-width: 0; /*Prevent overflow*/
+  /* box-sizing: border-box; Include padding and border in element's width */
+
+  /* font-size: 18px; */
+  /* font-weight: bold; */
+  /* flex: none; Prevent logo from shrinking */
+}
+
+/* This one is obvious. A note isn't required */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* This one is obvious. A note isn't required */
+.navbar .logo {
+  /* font-size: 25px;
+  font-weight: bold; */
+  font-size: 18px;
+  font-weight: bold;
+  flex: none; /* Prevent logo from shrinking */
+}
+
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* .navbar-content {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  } */
+
+  .navbar .menu-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links a {
+    width: 100%;
+    text-align: left;
+    padding: 14px 20px;
+    background-color: #333;
+    border-top: 1px solid #444;
+  }
+
+  .navbar-links a:hover {
+    background-color: #444;
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+}
+
+/* Additional media query for smaller screens */
+/* @media (max-width: 444px) {
+  .navbar {
+    padding: 14px 10px;
+  }
+
+  .navbar a {
+    padding: 14px 10px;
+  }
+
+  .navbar-links a {
+    padding: 14px 10px;
+  }
+} */
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /*Used in this example to enable scrolling */
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+  /* padding: 20px; */
+}
+
+/* img {
+  max-width: 100%;
+  height: auto;
+} */
+
+/* So far, the @media don't do anything. At least, nothing I see that's worth keeping them around. */
+/* @media (min-width: 768px) {
+  .main {
+    flex-direction: row;
+  }
+} */
+
+/*
+@media (max-width: 767px) {
+  .main {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .info-box {
+    margin: 10px 0;
+  }
+} */
+/* .navbar .linkedin-link {
+  background-color: #0077b5;
+  color: white;
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+
+.navbar .linkedin-link:hover {
+  background-color: #005582;
+} */
+
+/* .content {
+  padding: 20px;
+} */
+
+
+.info-box {
+  /* scroll-padding-top: 60px; Adjust this value to match the height of your navbar */
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+	display: flex;
+	align-items: flex-start;
+  justify-content: space-between;
+}
+
+.info-box .text-container {
+  flex: 1;
+}
+
+.info-box .image-container {
+  flex: 1;
+}
+
+.info-box img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* .info-box-image {
+  max-width: 100%;
+  height: auto;
+} */
+
+/* Responsive styles for info-box */
+@media (max-width: 767px) {
+  .info-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-box .text-container,
+  .info-box .image-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .info-box .text-container {
+    order: 1;
+  }
+
+  .info-box .image-container {
+    order: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Added later for project subpage */
+  .container {
+    flex-direction: column;
+    align-items: center;
+    /* width: 100%; */ /* Full width on smaller screens */
+    /* margin: 10px 0; Add vertical margin between stacked boxes */
+    /* justify-content: center; */
+
+    /* gap: 20px; */
+  }
+
+  .project-box {
+    width: 100%; /*Full width on smaller screens */
+    margin: 10px 0; /*Add vertical margin between stacked boxes*/
+  }
+
+  /* For the project images...duh */
+  /* It did nothing, so I removed it :P */
+}
+
+/* Additional media query for smaller screens */
+@media (max-width: 444px) {
+  .navbar {
+    padding: 14px 10px;
+  }
+
+  .navbar a {
+    padding: 14px 10px;
+  }
+
+  .navbar-links a {
+    padding: 14px 10px;
+  }
+}
+
+/* This will only be for the Projects Section */
+.project-box {
+  flex: 1;                        /* Ensures each box takes an equal amount of space */
+  border: 1px solid #ddd;         /* Example styling for each box */
+  padding: 20px;
+  box-sizing: border-box;         /* Ensures padding and border are included in the width and height */
+  text-align: center;
+  /* For the stacking feature */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* width: calc(33.333% - 20px); Three boxes per row with 20px gap */
+}
+
+.project-box img {
+  max-width: 100%;                /* Ensures image does not overflow the box */
+  height: auto;                   /* Maintains aspect ratio */
+  margin-bottom: 10px;            /* Space between image and content */
+}
+
+.info-box-content h2 {
+  margin: 10px 0;
+}
+
+.info-box-content p, .info-box-content a {
+  margin: 5px 0;
+}
+
+/* .info-box h2 h3 {
+  margin-top: 0;
+}
+
+.info-box p {
+  margin: 10px 0 0;
+} */
+
+.container {
+  display: flex;
+  /* Added for project-box class */
+  flex-wrap: wrap;
+  /* justify-content: space-between; Distributes the space between the items */
+  gap: 20px;                      /* Optional: space between items */
+  /* padding: 20px;
+  border: 1px solid #ccc;         Example styling for the container */
+}
+
+.image-container {
+	margin-right: 20px;
+  /* background-color: lightblue; */
+}
+
+
+.project-image {
+	max-width: 150px;
+	max-height: 150px;
+	border-radius: 8px;
+}
+
+/* I might get rid of this, cause it does nothing*/
+.text-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+.text-container h2 {
+	margin-top: 0;
+}
+
+
+.text-container p {
+	margin: 10px 0 0;
+}
+
+/* section {
+  padding: 60px 0;
+  border-bottom: 1px solid #ccc;
+} */
+
+/* Use when you need to stack and center your items */
+.stacked-container {
+  display: grid;
+  justify-items: center; /* Centers items horizontally */
+  text-align: center;    /* Centers text within the content */
+  gap: 20px;             /* Space between items */
+}
+
+/* .centered-container {
+  display: flex; */
+  /* justify-content: center; Centers items horizontally */
+  /* align-items: center;     Centers items vertically */
+  /* height: 100vh;           Optional: ensures the container takes the full viewport height */
+  /* text-align: center;      Optional: centers text within the content */
+/* } */
